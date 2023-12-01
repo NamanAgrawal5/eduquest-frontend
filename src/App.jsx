@@ -7,7 +7,7 @@ function App() {
   const loggedIn = false;
 
   return (
-    <div className="text-white">
+    <div>
       <BrowserRouter>
         <Routes>
           {loggedIn ? (
