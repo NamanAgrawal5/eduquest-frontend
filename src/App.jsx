@@ -1,10 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
+import Navigation from './components/navigation/Navigation';
 
 function App() {
 
-  const loggedIn = false;
+  const loggedIn = true;
 
   return (
     <div>
@@ -13,7 +14,7 @@ function App() {
           {loggedIn ? (
             <>
               <Route path="/" element={<Navigate to="/" />} />
-              {/* <Route path="*" element={<NotFound />} /> */}
+              <Route path="/home" element={<Navigation />} />
             </>
           ) : (
             <>
