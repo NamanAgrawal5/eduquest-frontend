@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, VStack, useColorModeValue } from '@chakra-ui/react';
-import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi';
+import { FiChevronDown, FiMenu } from 'react-icons/fi';
 
 const MobileNav = ({ onOpen, ...rest }) => {
     return (
@@ -32,7 +32,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
         </Text>
   
         <HStack spacing={{ base: '0', md: '6' }}>
-          <IconButton size="lg" variant="ghost" aria-label="open menu" icon={<FiBell />} />
           <Flex alignItems={'center'}>
             <Menu>
               <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
@@ -64,8 +63,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 borderColor={useColorModeValue('gray.200', 'gray.700')}
               >
                 <MenuItem>Profile</MenuItem>
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Billing</MenuItem>
                 <MenuDivider />
                 <MenuItem>Sign out</MenuItem>
               </MenuList>
