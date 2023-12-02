@@ -4,7 +4,6 @@ import {
   Flex,
   Box,
   FormControl,
-  FormLabel,
   Input,
   InputGroup,
   HStack,
@@ -15,6 +14,7 @@ import {
   Text,
   useColorModeValue,
   Link,
+  Select,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
@@ -33,9 +33,6 @@ export default function Signup() {
           <Heading fontSize={'4xl'} textAlign={'center'}>
             Sign up
           </Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
-            to enjoy all of our cool features ✌️
-          </Text>
         </Stack>
         <Box
           rounded={'lg'}
@@ -43,28 +40,15 @@ export default function Signup() {
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
-            <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl id="lastName">
-                  <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-            </HStack>
+            <FormControl id="firstName" isRequired>
+              <Input placeholder='Full Name' type="text" />
+            </FormControl>
             <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input placeholder='Email address' type="email" />
             </FormControl>
             <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} />
+                <Input placeholder='Password' type={showPassword ? 'text' : 'password'} />
                 <InputRightElement h={'full'}>
                   <Button
                     variant={'ghost'}
@@ -74,6 +58,48 @@ export default function Signup() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
+            <FormControl id="password" isRequired>
+              <InputGroup>
+                <Input placeholder='Confirm Password' type={showPassword ? 'text' : 'password'} />
+                <InputRightElement h={'full'}>
+                  <Button
+                    variant={'ghost'}
+                    onClick={() => setShowPassword((showPassword) => !showPassword)}>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </FormControl>
+            <FormControl id="libid" isRequired>
+              <InputGroup>
+                <Input placeholder='Library Id' type='text' />
+              </InputGroup>
+            </FormControl>
+            <FormControl id="rollno" isRequired>
+              <InputGroup>
+                <Input placeholder='University Roll No' type='text' />
+              </InputGroup>
+            </FormControl>
+            <HStack>
+              <Box>
+                <FormControl id="firstName" isRequired>
+                  <Select placeholder='Select Branch'>
+                    <option value='option1'>Option 1</option>
+                    <option value='option2'>Option 2</option>
+                    <option value='option3'>Option 3</option>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Box>
+                <FormControl id="firstName" isRequired>
+                  <Select placeholder='Select Section'>
+                    <option value='A'>A</option>
+                    <option value='B'>B</option>
+                    <option value='C'>C</option>
+                  </Select>
+                </FormControl>
+              </Box>
+            </HStack>
             <Stack spacing={10} pt={2}>
               <Button
                 loadingText="Submitting"
